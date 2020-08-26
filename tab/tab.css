@@ -1,0 +1,30 @@
+.blist {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.blist img {
+    width: 32px;
+    height: 32px;
+}
+
+.blist a {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 14px;
+    transition: .1s ease background-color;
+}
+
+.blist a:hover {
+    background-color: #ddd;
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        background-color: #222;
+    }
+    .blist a:hover {
+        background-color: #333;
+    }
+}

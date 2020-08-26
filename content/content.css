@@ -1,0 +1,52 @@
+.bbar {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 135px;
+    background-color: #fff;
+    box-shadow: 2px 2px 3px #ccc;
+    opacity: 0;
+    transform: translateY(-120px);
+    z-index: 100000;
+    overflow-x: hidden;
+    transition: .5s ease transform, 0.4s ease opacity;
+}
+
+.bbar.visible {
+    transform: translateX(0);
+    opacity: 1;
+    transition: .5s ease transform, 0.2s ease opacity;
+}
+
+.bbar div {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 8px;
+}
+
+.bbar a {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 14px;
+    transition: .1s ease background-color;
+}
+
+.bbar img {
+    width: 32px;
+    height: 32px;
+}
+
+.bbar a:hover {
+    background-color: #ddd;
+}
+
+@media (prefers-color-scheme: dark) {
+    .bbar {
+        background-color: #222;
+    }
+    .bbar a:hover {
+        background-color: #333;
+    }
+}
