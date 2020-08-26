@@ -11,7 +11,7 @@
    "chrome_url_overrides": {
       "newtab": "tab/tab.html"
    },
-   "content_security_policy": "script-src 'self'; object-src 'self'; img-src chrome://favicon/;",
+   "content_security_policy": "script-src 'self'; object-src 'self'; img-src chrome://favicon/ https://source.unsplash.com https://images.unsplash.com;",
    "version": "0.1",
    "web_accessible_resources": [],
    "background": {
