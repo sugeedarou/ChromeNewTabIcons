@@ -8,6 +8,7 @@ chrome.storage.local.get('bookmarks', (result) => {
 function createList(bookmarks) {
     const bbar = document.getElementById('blist')
     const div = document.createElement('div')
+    const blurDiv = document.createElement('div')
     bbar.className = 'blist'
     for (let bm of bookmarks) {
         const a = document.createElement('a')
