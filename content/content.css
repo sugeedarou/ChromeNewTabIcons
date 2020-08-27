@@ -1,3 +1,7 @@
+.bbar, .bbar div {
+    background-color: rgb(255, 255, 255);
+}
+
 .bbar {
     position: fixed;
     display: block;
@@ -9,7 +13,6 @@
     text-align: center;
     transition: .5s ease transform, .5s ease height, .5s ease opacity;
     opacity: 1;
-    background-color: green;
 }
 
 .bbar.hiddenBBB {
@@ -21,10 +24,8 @@
 
 .bbar div {
     margin: 0 auto;
-    background-color: rgb(255, 255, 255);
-    border-bottom: 1px solid #ccc;
     padding: 5px;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 2px solid #ccc;
 }
 
 .bbar a {
@@ -49,8 +50,11 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    .bbar {
+    .bbar, .bbar div {
         background-color: rgb(34, 34, 34);
+    }
+    .bbar div {
+        border-bottom: 2px solid #333;
     }
     .bbar a:hover {
         background-color: #333;
