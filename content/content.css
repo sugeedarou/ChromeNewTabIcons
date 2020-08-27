@@ -4,25 +4,27 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 5px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 2px 2px 3px #ccc;
+    padding-bottom: 25px;
     opacity: 0;
     transform: translateY(-100%) translateY(20px);
     z-index: 100000;
     overflow-x: hidden;
     text-align: center;
-    transition: .5s ease transform, 0.4s ease opacity;
+    transition: .5s ease transform, 0.4s ease opacity, 0.5s 0s ease padding-bottom;
 }
 
 .bbar.visible {
     transform: translateX(0);
     opacity: 1;
     transition: .5s ease transform, 0.2s ease opacity;
+    padding-bottom: 0;
 }
 
 .bbar div {
     margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
 }
 
 .bbar a {
