@@ -27,7 +27,7 @@ function loadBackgroundImage() {
     const img = document.createElement('img')
     img.src = `https://source.unsplash.com/random/${window.innerWidth}x${window.innerHeight}`
     img.addEventListener('load', () => {
-        img.classList.add('loaded')
+        bg.style.backgroundImage = `url(${img.src})`
+        bg.classList.add('loaded')
     })
-    bg.appendChild(img)
 }
