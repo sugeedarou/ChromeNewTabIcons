@@ -9,10 +9,11 @@ body {
 
 .blist {
     margin: 0;
+    padding: 5px 0;
+    text-align: center;
 }
 
 .blist div {
-    max-width: 800px;
     margin: 0 auto;
 }
 

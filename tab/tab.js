@@ -1,7 +1,6 @@
 chrome.storage.local.get('bookmarks', (result) => {
     if (typeof result.bookmarks != 'undefined') {
         createList(result.bookmarks)
-        loadBackgroundImage()
     }
 })
 
@@ -20,9 +19,4 @@ function createList(bookmarks) {
     }
 
     document.body.appendChild(bbar)
-}
-
-function loadBackgroundImage() {
-    document.documentElement.style.background =
-        `url('https://source.unsplash.com/random/${window.innerWidth}x${window.innerHeight}') no-repeat center`;
 }
