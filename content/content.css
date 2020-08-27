@@ -1,4 +1,4 @@
-.bbar, .bbar div {
+.bbar div {
     background-color: rgb(255, 255, 255);
 }
 
@@ -8,7 +8,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 100000;
+    z-index: 2147483647;
     overflow-x: hidden;
     text-align: center;
     transition: .5s ease transform, .5s ease height, .5s ease opacity;
@@ -23,9 +23,12 @@
 }
 
 .bbar div {
-    margin: 0 auto;
     padding: 5px;
-    border-bottom: 2px solid #ccc;
+    border: 1px solid #ccc;
+    border-top: none;
+    max-width: 800px;
+    margin-left: 110px;
+    border-radius: 0 0 20px 20px;
 }
 
 .bbar a {
@@ -54,7 +57,8 @@
         background-color: rgb(34, 34, 34);
     }
     .bbar div {
-        border-bottom: 2px solid #333;
+        border: 1px solid #333;
+        border-top: none;
     }
     .bbar a:hover {
         background-color: #333;
