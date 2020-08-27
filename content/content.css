@@ -52,7 +52,7 @@
     .bbar, .bbar div {
         background-color: rgb(34, 34, 34);
     }
-    .bbar div {
+    .bbar {
         border: 1px solid #333;
         border-top: none;
     }

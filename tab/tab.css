@@ -6,7 +6,7 @@ body {
 
 .blist {
     position: relative;
-    margin: 0;
+    margin-top: 32px;
     padding: 5px 0;
     text-align: center;
     z-index: 10;
@@ -19,6 +19,11 @@ body {
     border-radius: 10px;
     backdrop-filter: blur(5px);
     max-width: 800px;
+    transition: .5s ease box-shadow;
+}
+
+#background.loaded + .blist div {
+    box-shadow: 0 0 3px #ccc;
 }
 
 .blist img {
@@ -38,8 +43,11 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-    html, .blist {
+    html, .blist div {
         background-color: rgb(34, 34, 34);
+    }
+    #background.loaded + .blist div {
+        box-shadow: 0 0 3px #111;
     }
     .blist a:hover {
         background-color: #333;
