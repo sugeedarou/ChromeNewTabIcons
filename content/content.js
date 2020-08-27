@@ -9,7 +9,6 @@ let bbar = null
 
 function createSidebar(bookmarks) {
 	bbar = document.createElement('div')
-	const div = document.createElement('div')
 	bbar.className = 'bbar hiddenBBB'
 	for (let bm of bookmarks) {
 		const a = document.createElement('a')
@@ -17,8 +16,7 @@ function createSidebar(bookmarks) {
 		img.src = bm.iconSrc
 		a.href = bm.url
 		a.appendChild(img)
-		div.appendChild(a)
-		bbar.appendChild(div)
+		bbar.appendChild(a)
 	}
 
 	document.documentElement.insertAdjacentElement('afterbegin', bbar)
