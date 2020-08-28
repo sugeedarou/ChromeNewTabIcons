@@ -1,33 +1,33 @@
 chrome.storage.local.get('bookmarks', (result) => {
 	if (typeof result.bookmarks != 'undefined') {
-		createSidebar(result.bookmarks)
+		createBookmarkList(result.bookmarks)
 		listenToEvents()
 	}
 })
 
-let bbar = null
+let blist = null
 
-function createSidebar(bookmarks) {
-	bbar = document.createElement('div')
-	bbar.className = 'bbar hiddenBBB'
+function createBookmarkList(bookmarks) {
+	blist = document.createElement('div')
+	blist.className = 'blist hiddenBBB'
 	for (let bm of bookmarks) {
 		const a = document.createElement('a')
 		const img = document.createElement('img')
 		img.src = bm.iconSrc
 		a.href = bm.url
 		a.appendChild(img)
-		bbar.appendChild(a)
+		blist.appendChild(a)
 	}
 
-	document.documentElement.insertAdjacentElement('afterbegin', bbar)
+	document.documentElement.insertAdjacentElement('afterbegin', blist)
 }
 
 function listenToEvents() {
 	window.addEventListener('mousemove', (e) => {
-		if (e.path.includes(bbar)) {
-			bbar.classList.remove('hiddenBBB')
+		if (e.path.includes(blist)) {
+			blist.classList.remove('hiddenBBB')
 		} else {
-			bbar.classList.add('hiddenBBB')
+			blist.classList.add('hiddenBBB')
 		}
 	})
 }

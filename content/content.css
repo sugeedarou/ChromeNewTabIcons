@@ -1,8 +1,8 @@
-.bbar {
+.blist {
     background-color: rgb(255, 255, 255);
 }
 
-.bbar {
+.blist {
     position: fixed;
     display: block;
     top: 0;
@@ -21,13 +21,13 @@
     border-radius: 0 0 20px 20px;
 }
 
-.bbar.hiddenBBB {
+.blist.hiddenBBB {
     opacity: 0;
     transform: translateY(-100%) translateY(20px);
     padding-bottom: 25px;
     transition: .5s ease transform, .5s ease height, .5s ease opacity, 0s .5s ease padding-bottom;
 }
-.bbar a {
+.blist a {
     display: inline-block;
     border-radius: 10px;
     padding: 14px;
@@ -35,28 +35,28 @@
     transition: .1s ease background-color, .5s ease transform;
 }
 
-.bbar.hiddenBBB a {
+.blist.hiddenBBB a {
     transform: scale(0.5);
 }
 
-.bbar img {
+.blist img {
     width: 32px;
     height: 32px;
 }
 
-.bbar a:hover {
+.blist a:hover {
     background-color: #ddd;
 }
 
 @media (prefers-color-scheme: dark) {
-    .bbar, .bbar div {
+    .blist, .blist div {
         background-color: rgb(34, 34, 34);
     }
-    .bbar {
+    .blist {
         border: 1px solid #333;
         border-top: none;
     }
-    .bbar a:hover {
+    .blist a:hover {
         background-color: #333;
     }
 }

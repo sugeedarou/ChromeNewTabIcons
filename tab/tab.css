@@ -44,7 +44,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
     html, .blist div {
-        background-color: rgb(34, 34, 34);
+        background-color: rgba(34, 34, 34, 0.8);
     }
     #background.loaded + .blist div {
         box-shadow: 0 0 3px #111;
