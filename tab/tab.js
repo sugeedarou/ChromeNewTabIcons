@@ -29,27 +29,34 @@ let maxPreloadedImagesCount = 5;
 function loadBackgroundImage() {
     chrome.storage.local.get('backgrounds', async (result) => {
         if (typeof result.backgrounds == 'undefined') {
-            await preloadImage(0);
+            await preloadImages()
             addImageToPage(backgrounds[0])
-            preloadImages()
         } else {
             backgrounds = result.backgrounds
             bgImg = backgrounds[0]
             addImageToPage(bgImg)
-            preloadImages()
+            // rotate images
+            backgrounds.push(backgrounds[0])
+            backgrounds.shift()
+            chrome.storage.local.set({ backgrounds }, () => {
+                preloadImages()
+            })
         }
     })
-
 }
 
 async function preloadImages() {
+    let date = new Date()
+    // offset makes it less likely to get the same pictures
+    let iOffset = date.getSeconds() * 1000 + date.getMilliseconds()
     for (let i = backgrounds.length; i < maxPreloadedImagesCount + 1; i++) {
-        await preloadImage(i)
+        await preloadImage(i + iOffset)
     }
     chrome.storage.local.set({ backgrounds })
 }
 
 async function preloadImage(i) {
+    console.log(i)
     let data = await fetch(`https://source.unsplash.com/random/2560x1600/?sig=${i}`)
     let img = new Image()
     img.src = data.url
