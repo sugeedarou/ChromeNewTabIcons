@@ -3,11 +3,11 @@
 }
 
 .blist {
+    box-sizing: content-box;
     position: fixed;
     display: block;
     top: 0;
     left: 0;
-    width: 100%;
     z-index: 2147483647;
     overflow-x: hidden;
     text-align: center;

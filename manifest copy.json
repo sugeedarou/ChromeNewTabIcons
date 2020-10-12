@@ -15,5 +15,19 @@
    "web_accessible_resources": [],
    "background": {
       "page": "logic/main.html"
-   }
+   },
+   "content_scripts": [
+      {
+         "matches": [
+            "<all_urls>"
+         ],
+         "css": [
+            "content/content.css"
+         ],
+         "js": [
+            "content/content.js"
+         ],
+         "run_at": "document_end"
+      }
+   ]
 }
