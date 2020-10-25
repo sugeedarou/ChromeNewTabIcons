@@ -1,4 +1,6 @@
-# BBB (better bookmarks bar)
+# Chrome-NewTab-Favorite-Icons
 
-![Screenshot1](screenshots/newTab.png)
-![Screenshot2](screenshots/website.png)
+Bookmarks are synced to the default chrome bookmarks bar.
+Use it to manage and rearrange the icons.
+
+![Screenshot1](screenshot.png)
