@@ -1,4 +1,4 @@
-# Chrome-NewTab-Favorite-Icons
+# ChromeNewTabIcons
 
 Bookmarks are synced to the default chrome bookmarks bar.
 
