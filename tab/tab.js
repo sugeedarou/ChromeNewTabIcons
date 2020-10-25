@@ -56,7 +56,6 @@ async function preloadImages() {
 }
 
 async function preloadImage(i) {
-    console.log(i)
     let data = await fetch(`https://source.unsplash.com/2560x1600/?nature&sig=${i}`)
     let img = new Image()
     img.src = data.url
