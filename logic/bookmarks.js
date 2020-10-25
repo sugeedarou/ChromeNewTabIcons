@@ -2,6 +2,7 @@ let tree = chrome.bookmarks.getTree(async (nodes) => {
     let nodeList = nodes[0].children[0].children;
     let bookmarks = []
     for (let node of nodeList) {
+        if ('children' in node) continue;
         let dataURL = await getImgDataUrl('chrome://favicon/size/32@1x/' + node.url)
         bookmarks.push({
             url: node.url,

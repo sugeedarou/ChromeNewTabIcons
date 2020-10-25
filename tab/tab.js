@@ -29,8 +29,10 @@ let maxPreloadedImagesCount = 5;
 function loadBackgroundImage() {
     chrome.storage.local.get('backgrounds', async (result) => {
         if (typeof result.backgrounds == 'undefined') {
+            document.getElementById('loading').style.opacity = '1'
             await preloadImages()
             addImageToPage(backgrounds[0])
+            document.getElementById('loading').style.opacity = '0'
         } else {
             backgrounds = result.backgrounds
             bgImg = backgrounds[0]
