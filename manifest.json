@@ -1,6 +1,6 @@
 {
    "manifest_version": 2,
-   "name": "BBB (better bookmarks bar)",
+   "name": "ChromeNewTabIcons",
    "permissions": [
       "storage",
       "contextMenus",

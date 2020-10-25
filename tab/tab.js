@@ -29,17 +29,19 @@ let maxPreloadedImagesCount = 5;
 function loadBackgroundImage() {
     chrome.storage.local.get('backgrounds', async (result) => {
         if (typeof result.backgrounds == 'undefined') {
-            document.getElementById('loading').style.opacity = '1'
+            document.getElementById('loading').style.display = 'block'
             await preloadImages()
             addImageToPage(backgrounds[0])
-            document.getElementById('loading').style.opacity = '0'
+            document.getElementById('loading').style.display = 'none'
         } else {
             backgrounds = result.backgrounds
             bgImg = backgrounds[0]
             addImageToPage(bgImg)
             // rotate images
+            console.log(backgrounds)
             backgrounds.push(backgrounds[0])
             backgrounds.shift()
+            console.log(backgrounds)
             chrome.storage.local.set({ backgrounds }, () => {
                 preloadImages()
             })
@@ -61,7 +63,7 @@ async function preloadImage(i) {
     let data = await fetch(`https://source.unsplash.com/2560x1600/?nature&sig=${i}`)
     let img = new Image()
     img.src = data.url
-    if (i < maxPreloadedImagesCount) {
+    if (backgrounds.length < maxPreloadedImagesCount) {
         backgrounds.push(img.src)
     } else {
         backgrounds.shift()
