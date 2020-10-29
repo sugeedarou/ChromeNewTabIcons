@@ -1,6 +1,6 @@
 # ChromeNewTabIcons
 
-The bookmarks of the chrome bookmarks bar in every new tab.
+A list of your bookmarks in every new tab.
 
 ![Screenshot1](screenshot.png)
 
